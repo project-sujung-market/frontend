@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업로드페이지</title>
+    <link rel="stylesheet" href="./Upload.css">
+</head>
+<body>
+    <div class="modal">
+        <div class="modal-inner">
+            <h1 class="modal-inner-h1">제품 내역</h1>
+            <ul class="modal-inner-ul">
+                <li class="modal-inner-li"><h4 class="modal-inner-h4">제목</h4>
+                    <p class="modal-inner-name modal-inner-p"></p>
+                </li>
+
+                <li class="modal-inner-li"><h4 class="modal-inner-h4">내용</h4>
+                    <p class="modal-inner-content modal-inner-p"></p>
+                </li>
+
+                <li class="modal-inner-li"><h4 class="modal-inner-h4">주소</h4>
+                    <p class="modal-inner-address modal-inner-p"></p>
+                </li>
+
+                <li class="modal-inner-li"><h4 class="modal-inner-h4">가격</h4>
+                    <p class="modal-inner-price modal-inner-p"></p>
+                </li>
+            </ul>
+            <button class="Upload-button modal-inner-button">UPLOAD</button>
+            <button class="Upload-button modal-inner-back" onclick="close_modal()">BACK</button>
+        </div>
+    </div>
+
+    <header>
+        <h1 class="logo"><a href="./index.html"><img src="images/logo.png" alt=""><p class="logo_name"><b>수정마켓</b></p></a></h1>
+        <ul>
+            <li><a href="https://www.instagram.com/swjb._.hb/" target="_blank">수원정보과학고 인스타</a></li>
+            <li><a href="https://swjb-h.goesw.kr/subList/31000019471" target="_blank">급식</a></li>
+        </ul>
+        <div class="search">
+            <input type="text">
+            <div class="icon"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></div>
+            
+        </div>
+        <div class="login"><a href="/login-page/login.html">로그인 / 회원가입</a></div>
+    </header>
+
+    <div class="Upload-title">
+        <h1 class="Upload-title-h1">마켓 업로드 페이지</h1>
+        <p class="Upload-title-p">해당 페이지에서는 원하는 제품을 마켓에 올릴 수 있습니다.<br>
+        마켓에 올린 제품은 <b>[내정보]</b> 페이지에서 확인하거나 회수할 수 있습니다</p>
+    </div>
+
+    <div class="container">
+        <div class="left">
+            <div class="Upload-img">
+                이미지
+            </div>
+            <form method="post" enctype="multipart/form-data" class="Upload-img-form">
+                <label for="chooseFile" class="Upload-img-label">
+                    이미지 추가
+                </label>
+                <input type="file" class="Upload-img-input" name="chooseFile" accept="image/*">
+            </form>
+
+            <button class="Upload-button Upload-button-left" onclick="open_modal()">NEXT</button>
+        </div>
+
+        <div class="right">
+            <h2 class="contents-h2">상세 정보</h2>
+
+            <ul class="contents-ul">
+                <li class="contents-li"><p class="contents-p">제목 <span class="contents-span">*</span></p>
+                    <input type="text" name="text" class="contents-textarea contents-name" placeholder="필수 입력 사항입니다.">
+                </li>
+                <li class="contents-li"><p class="contents-p">내용 <span class="contents-span">*</span></p>
+                    <input type="text" name="text" class="contents-textarea contents-content" placeholder="필수 입력 사항입니다.">
+                </li>
+                <li class="contents-li"><p class="contents-p">주소 <span class="contents-span">*</span></p>
+                    <input type="text" name="text" class="contents-textarea contents-address" placeholder="필수 입력 사항입니다.">
+                </li>
+                <li class="contents-li"><p class="contents-p">가격 <span class="contents-span">*</span></p>
+                    <input type="text" onkeyup="formatPhoneNumber()" name="text" class="contents-textarea contents-price" placeholder="필수 입력 사항입니다.">
+                </li>
+            </ul>
+
+            <button class="Upload-button Upload-button-right">BACK</button>
+        </div>
+    </div>
+
+    <script src="./Upload.js"></script>
+</body>
+</html>
